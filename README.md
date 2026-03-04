@@ -132,12 +132,6 @@ python3 demo/src/validateJson.py demo/schemas/debrief.schema.json demo/data/outp
 python3 demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outputDebrief.json
 
 
-5. Commit message
-
-Update demo run steps
-
-6. Click Commit changes
-
 ---
 
 Step 6  
