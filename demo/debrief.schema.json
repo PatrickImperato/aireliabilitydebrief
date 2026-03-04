@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "required": [
+    "missionId",
+    "debrief"
+  ],
+  "properties": {
+    "missionId": {
+      "type": "string"
+    },
+    "debrief": {
+      "type": "object",
+      "required": [
+        "summary",
+        "highlights",
+        "issues",
+        "unknowns"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "highlights": {
+          "type": "array",
+          "items": {
+            "$ref": "#/defs/claim"
+          }
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/defs/claim"
+          }
+        },
+        "unknowns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/defs/unknown"
+          }
+        }
+      }
+    }
+  },
+  "defs": {
+    "claim": {
+      "type": "object",
+      "required": [
+        "text",
+        "sources"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unknown": {
+      "type": "object",
+      "required": [
+        "text",
+        "sources"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "maxItems": 0
+        }
+      }
+    }
+  }
+}

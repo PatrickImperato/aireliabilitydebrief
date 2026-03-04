@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "required": [
+    "missionId",
+    "startTimeUtc",
+    "events"
+  ],
+  "properties": {
+    "missionId": {
+      "type": "string"
+    },
+    "startTimeUtc": {
+      "type": "string"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "eventId",
+          "timeOffsetSec",
+          "type",
+          "label",
+          "score",
+          "notes"
+        ],
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "timeOffsetSec": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "type": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "score": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
