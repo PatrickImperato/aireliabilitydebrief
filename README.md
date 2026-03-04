@@ -87,7 +87,7 @@ python3 demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outDebr
 3. Human approval workflow with audit export
 
 ## System Overview
-
+Architecture diagram: assets/systemArchitecture.md
 The system demonstrates a reliability first architecture for AI assisted feedback generation.
 
 Pipeline
@@ -121,32 +121,6 @@ Clone with git
 ```bash
 git clone https://github.com/PatrickImperato/aireliabilitydebrief.git
 cd aireliabilitydebrief
-
-
-
-*****## Run the demo
-
-### Get the code
-
-Option 1  
-Download ZIP from the green Code button
-
-Option 2  
-Clone with git
-
-```bash
-git clone https://github.com/PatrickImperato/aireliabilitydebrief.git
-cd aireliabilitydebrief
-
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-python3 demo/src/generateDebrief.py demo/data/sampleMissionLog.json demo/data/sampleTranscript.json demo/data/outputDebrief.json
-
-python3 demo/src/validateJson.py demo/schemas/debrief.schema.json demo/data/outputDebrief.json
-
-python3 demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outputDebrief.json
 
 
 ---
