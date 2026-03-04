@@ -1,1 +1,30 @@
-
+{
+  "missionId": "SIM001",
+  "startTimeUtc": "2026-02-20T18:00:00Z",
+  "events": [
+    {
+      "eventId": "E1",
+      "timeOffsetSec": 120,
+      "type": "objective",
+      "label": "Comm discipline",
+      "score": 2,
+      "notes": "Two stepped on calls during rejoin"
+    },
+    {
+      "eventId": "E2",
+      "timeOffsetSec": 540,
+      "type": "objective",
+      "label": "Fuel management",
+      "score": 4,
+      "notes": "On plan after correction at push"
+    },
+    {
+      "eventId": "E3",
+      "timeOffsetSec": 900,
+      "type": "safety",
+      "label": "Altitude block",
+      "score": 3,
+      "notes": "Brief dip below floor by 200 feet, corrected"
+    }
+  ]
+}
