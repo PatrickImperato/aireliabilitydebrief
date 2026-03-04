@@ -11,7 +11,7 @@ Original article: https://www.linkedin.com/pulse/ai-hard-partreliability-patrick
 
 This repo shows a reliability first approach for AI assisted debriefing in secure simulator environments.
 
-Full article text lives in docs Article.md
+Full article text lives in docs/Article.md
 
 ## What you can review fast
 
