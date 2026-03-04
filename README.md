@@ -8,6 +8,9 @@ Technical product leader focused on reliable AI systems in secure environments.
 LinkedIn  
 https://www.linkedin.com/in/patrickimperato/
 
+Original article
+https://www.linkedin.com/pulse/ai-hard-partreliability-patrick-imperato-8idwc/
+
 This repo shows a reliability first approach for AI assisted debriefing in secure simulator environments.
 
 Full article text lives in docs Article.md
@@ -134,12 +137,4 @@ python3 demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outputD
 
 ---
 
-Step 6  
-Add the LinkedIn article link to README
-
-1. In README.md near the top, add this block
-
-```md
-Original article
-https://www.linkedin.com/pulse/ai-hard-partreliability-patrick-imperato-8idwc/
 
