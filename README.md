@@ -77,7 +77,29 @@ python demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outDebri
 2. Rules checks tied to doctrine constraints
 3. Human approval workflow with audit export
 
-## Contact
+## Contact: https://www.linkedin.com/in/patrickimperato/
+
+## System Overview
+
+The system demonstrates a reliability first architecture for AI assisted feedback generation.
+
+Pipeline
+
+Mission Data  
+↓  
+Structured Event Mapping  
+↓  
+Transcript Processing  
+↓  
+Objective Detection  
+↓  
+Constrained Debrief Generation  
+↓  
+Schema Validation  
+↓  
+Evaluation and Scoring
+
+Each layer is isolated to prevent hallucinated outputs and to ensure every claim can be traced back to source data.
 
 LinkedIn
 https://www.linkedin.com/in/patrickimperato/
