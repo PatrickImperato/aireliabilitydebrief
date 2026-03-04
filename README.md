@@ -107,7 +107,45 @@ Evaluation and Scoring
 
 Each layer is isolated to prevent hallucinated outputs and to ensure every claim can be traced back to source data.
 
-## Run the Demo
+## Run the demo
 
-Clone the repository
+### Get the code
+
+Option 1  
+Download ZIP from the green Code button
+
+Option 2  
+Clone with git
+
+```bash
+git clone https://github.com/PatrickImperato/aireliabilitydebrief.git
+cd aireliabilitydebrief
+
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+python3 demo/src/generateDebrief.py demo/data/sampleMissionLog.json demo/data/sampleTranscript.json demo/data/outputDebrief.json
+
+python3 demo/src/validateJson.py demo/schemas/debrief.schema.json demo/data/outputDebrief.json
+
+python3 demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outputDebrief.json
+
+
+5. Commit message
+
+Update demo run steps
+
+6. Click Commit changes
+
+---
+
+Step 6  
+Add the LinkedIn article link to README
+
+1. In README.md near the top, add this block
+
+```md
+Original article
+https://www.linkedin.com/pulse/ai-hard-partreliability-patrick-imperato-8idwc/
 
