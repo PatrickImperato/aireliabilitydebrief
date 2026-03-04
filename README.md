@@ -113,6 +113,22 @@ Each layer is isolated to prevent hallucinated outputs and to ensure every claim
 ### Get the code
 
 Option 1  
+Download ZIP from the green Code button on GitHub.
+
+Option 2  
+Clone with git
+
+```bash
+git clone https://github.com/PatrickImperato/aireliabilitydebrief.git
+cd aireliabilitydebrief
+
+
+
+*****## Run the demo
+
+### Get the code
+
+Option 1  
 Download ZIP from the green Code button
 
 Option 2  
