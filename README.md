@@ -50,7 +50,7 @@ src reference pipeline and scoring
 Install
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -58,19 +58,19 @@ pip install -r requirements.txt
 Run demo
 
 ```bash
-python demo/src/generateDebrief.py demo/data/sampleMissionLog.json demo/data/sampleTranscript.json demo/data/outDebrief.json
+python3 demo/src/generateDebrief.py demo/data/sampleMissionLog.json demo/data/sampleTranscript.json demo/data/outDebrief.json
 ```
 
 Validate output
 
 ```bash
-python demo/src/validateJson.py demo/schemas/debrief.schema.json demo/data/outDebrief.json
+python3 demo/src/validateJson.py demo/schemas/debrief.schema.json demo/data/outDebrief.json
 ```
 
 Score output
 
 ```bash
-python demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outDebrief.json
+python3 demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outDebrief.json
 ```
 
 ## What the demo does
