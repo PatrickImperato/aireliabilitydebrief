@@ -19,7 +19,7 @@ Original article
 
 This repository demonstrates a reliability first architecture for AI assisted training debrief generation inside secure simulator environments.
 
-The purpose is not to build a large model system. The purpose is to show how AI outputs can be made traceable, constrained, and auditable in environments where correctness matters.
+The goal is not to build a large model system. The goal is to demonstrate how AI outputs can be made **traceable, constrained, and auditable** in environments where correctness matters.
 
 The repository includes
 
@@ -29,9 +29,23 @@ The repository includes
 4. Output validation  
 5. Evaluation metrics  
 
-Full article text is located in
+Full article text:
 
-docs/Article.md
+[Article](docs/Article.md)
+
+---
+
+## Design Goals
+
+This project demonstrates several key system design goals common in reliable AI infrastructure.
+
+Reliable outputs  
+Traceable model behavior  
+Schema constrained generation  
+Deterministic evaluation  
+Separation between data, model logic, and validation
+
+These principles ensure the AI component behaves predictably within a controlled system.
 
 ---
 
@@ -47,9 +61,9 @@ Mission Data
 → Objective Detection  
 → Constrained Debrief Generation  
 → Schema Validation  
-→ Evaluation and Scoring  
+→ Evaluation and Scoring
 
-Each layer isolates model behavior so every output can be traced to its source data.
+Each layer isolates model behavior so every output can be traced back to source data.
 
 Architecture description
 
@@ -68,7 +82,6 @@ demo/
         expectedDebrief.json
         sampleMissionLog.json
         sampleTranscript.json
-        outputDebrief.json
 
     schemas/
         debrief.schema.json
@@ -100,7 +113,7 @@ requirements.txt
 ### Download the repository
 
 Option 1  
-Download ZIP from the green Code button on GitHub.
+Download ZIP from the green Code button.
 
 Option 2  
 Clone using git
@@ -119,7 +132,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-When activated your terminal should show
+When activated your terminal will show
 
 ```
 (.venv)
@@ -145,7 +158,7 @@ Run the generator script.
 python3 demo/src/generateDebrief.py demo/data/sampleMissionLog.json demo/data/sampleTranscript.json demo/data/outputDebrief.json
 ```
 
-The generated output file will appear at
+The generated output file appears here
 
 ```
 demo/data/outputDebrief.json
@@ -161,7 +174,7 @@ Validate the generated JSON using the schema.
 python3 demo/src/validateJson.py demo/schemas/debrief.schema.json demo/data/outputDebrief.json
 ```
 
-Expected result
+Expected output
 
 ```
 Validation passed
@@ -194,7 +207,7 @@ F1 0.667
 
 AI systems can generate convincing text that is incorrect.
 
-In secure environments such as training simulators, defense systems, and regulated workflows, outputs must be reliable and auditable.
+In secure environments such as training simulators, defense systems, or regulated workflows, outputs must be **reliable and auditable**.
 
 This repository demonstrates a reliability first architecture that controls model outputs using structured constraints.
 
@@ -203,7 +216,7 @@ Key controls include
 Template constrained outputs  
 Schema validation gates  
 Traceable source inputs  
-Deterministic evaluation metrics  
+Deterministic evaluation metrics
 
 In this system the AI component becomes one controlled stage inside a reliable pipeline.
 
@@ -236,17 +249,17 @@ Potential failure modes addressed
 Hallucinated claims  
 Unstructured output drift  
 Missing traceability  
-Silent regressions in output quality  
+Silent regressions in output quality
 
 Controls implemented
 
 Schema validation  
 Deterministic scoring  
-Explicit source references  
+Explicit source references
 
 Full documentation
 
-docs/ThreatModel.md
+[Threat Model](docs/ThreatModel.md)
 
 ---
 
@@ -258,11 +271,11 @@ Metrics include
 
 Precision  
 Recall  
-F1 score  
+F1 score
 
 See
 
-docs/EvaluationPlan.md
+[Evaluation Plan](docs/EvaluationPlan.md)
 
 ---
 
