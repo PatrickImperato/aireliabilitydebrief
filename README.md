@@ -1,5 +1,13 @@
 # AI Is Not The Hard Part Reliability Is
 
+Author  
+Patrick Imperato  
+
+Technical product leader focused on reliable AI systems in secure environments.
+
+LinkedIn  
+https://www.linkedin.com/in/patrickimperato/
+
 This repo shows a reliability first approach for AI assisted debriefing in secure simulator environments.
 
 Full article text lives in docs Article.md
@@ -100,6 +108,11 @@ Schema Validation
 Evaluation and Scoring
 
 Each layer is isolated to prevent hallucinated outputs and to ensure every claim can be traced back to source data.
+
+## Run the Demo
+
+Clone the repository
+
 
 LinkedIn
 https://www.linkedin.com/in/patrickimperato/
