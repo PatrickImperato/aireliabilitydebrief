@@ -1,6 +1,6 @@
 # AI Is Not The Hard Part Reliability Is
 
-A reliability first architecture for AI assisted training debrief generation in secure simulator environments.
+Reliable AI system architecture for structured training debrief generation in secure simulator environments.
 
 Author  
 Patrick Imperato
@@ -53,7 +53,7 @@ These principles ensure the AI component behaves predictably within a controlled
 
 The system demonstrates a reliability first pipeline for AI assisted debrief generation.
 
-Pipeline flow
+Pipeline architecture
 
 Mission Data  
 → Structured Event Mapping  
@@ -69,6 +69,22 @@ Architecture description
 
 [System Architecture](assets/systemArchitecture.md)
 
+## Example Output
+
+Example generated debrief
+
+```json
+{
+  "missionId": "SIM001",
+  "summary": "Debrief draft generated from mission data.",
+  "highlights": [
+    "Fuel management recovered"
+  ],
+  "issues": [
+    "Comm discipline stepped calls"
+  ]
+}
+```
 ---
 
 ## Repository Structure
