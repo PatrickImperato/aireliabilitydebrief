@@ -1,96 +1,43 @@
 # AI Is Not The Hard Part Reliability Is
 
 Author  
-Patrick Imperato  
+Patrick Imperato
 
 Technical product leader focused on reliable AI systems in secure environments.
 
-LinkedIn: https://www.linkedin.com/in/patrickimperato/
+LinkedIn  
+https://www.linkedin.com/in/patrickimperato/
 
-Original article: https://www.linkedin.com/pulse/ai-hard-partreliability-patrick-imperato-8idwc/
+Original article  
+https://www.linkedin.com/pulse/ai-hard-partreliability-patrick-imperato-8idwc/
 
-This repo shows a reliability first approach for AI assisted debriefing in secure simulator environments.
+---
 
-Full article text lives in docs/Article.md
+## Overview
 
-## What you can review fast
+This repository demonstrates a reliability first architecture for AI assisted training debrief generation inside secure simulator environments.
 
-1. Architecture docs that explain the system
-2. A small demo pipeline using synthetic inputs
-3. Schemas that constrain outputs
-4. A scoring script for regression checks
-5. A threat model and rollout gates
+The purpose is not to build a large model system. The purpose is to show how AI outputs can be made traceable, constrained, and auditable in environments where correctness matters.
 
-## Why this exists
+The repository includes
 
-AI can sound right.
-You still need outputs you can trust.
+1. Architecture documentation
+2. A working demo pipeline
+3. Schema constrained outputs
+4. Output validation
+5. Evaluation metrics
 
-This repo focuses on
+Full article text is located in
 
-1. Template first outputs
-2. Every claim traces to an input reference
-3. Rollout stages with gates
-4. Human review where risk is high
+docs/Article.md
 
-## Repo map
-
-docs
-Article.md
-Architecture.md
-EvaluationPlan.md
-ThreatModel.md
-
-demo
-data synthetic inputs and expected output
-schemas JSON schemas for inputs and outputs
-src reference pipeline and scoring
-
-## Quick start
-
-Install
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-Run demo
-
-```bash
-python3 demo/src/generateDebrief.py demo/data/sampleMissionLog.json demo/data/sampleTranscript.json demo/data/outDebrief.json
-```
-
-Validate output
-
-```bash
-python3 demo/src/validateJson.py demo/schemas/debrief.schema.json demo/data/outDebrief.json
-```
-
-Score output
-
-```bash
-python3 demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outDebrief.json
-```
-
-## What the demo does
-
-1. Uses only provided inputs
-2. Generates a debrief draft inside a fixed schema
-3. Requires sources for each claim
-
-## What I would build next
-
-1. Confidence scoring per claim
-2. Rules checks tied to doctrine constraints
-3. Human approval workflow with audit export
+---
 
 ## System Overview
-Architecture diagram: assets/systemArchitecture.md
-The system demonstrates a reliability first architecture for AI assisted feedback generation.
 
-Pipeline
+The system demonstrates a reliability first pipeline for AI assisted debrief generation.
+
+Pipeline flow
 
 Mission Data  
 ↓  
@@ -106,23 +53,206 @@ Schema Validation
 ↓  
 Evaluation and Scoring
 
-Each layer is isolated to prevent hallucinated outputs and to ensure every claim can be traced back to source data.
+Each layer isolates model behavior so every output can be traced to its source data.
 
-## Run the demo
+Architecture description
 
-### Get the code
+assets/systemArchitecture.md
+
+---
+
+## Repository Structure
+
+assets/
+    systemArchitecture.md
+
+demo/
+    data/
+        expectedDebrief.json
+        sampleMissionLog.json
+        sampleTranscript.json
+        outputDebrief.json
+
+    schemas/
+        debrief.schema.json
+        missionLog.schema.json
+        transcript.schema.json
+
+    src/
+        generateDebrief.py
+        validateJson.py
+        scoreOutput.py
+
+docs/
+    Article.md
+    Architecture.md
+    EvaluationPlan.md
+    Glossary.md
+    References.md
+    ThreatModel.md
+
+LICENSE  
+README.md  
+requirements.txt
+
+---
+
+## Run the Demo
+
+### Download the repository
 
 Option 1  
 Download ZIP from the green Code button on GitHub.
 
 Option 2  
-Clone with git
+Clone using git
 
-```bash
-git clone https://github.com/PatrickImperato/aireliabilitydebrief.git
+git clone https://github.com/PatrickImperato/aireliabilitydebrief.git  
 cd aireliabilitydebrief
-
 
 ---
 
+### Create a Python environment
 
+python3 -m venv .venv  
+source .venv/bin/activate
+
+When activated your terminal should show
+
+(.venv)
+
+---
+
+### Install dependencies
+
+pip install -r requirements.txt
+
+The demo only requires the jsonschema package.
+
+---
+
+### Generate a debrief
+
+Run the generator script.
+
+python3 demo/src/generateDebrief.py demo/data/sampleMissionLog.json demo/data/sampleTranscript.json demo/data/outputDebrief.json
+
+The generated output file will appear at
+
+demo/data/outputDebrief.json
+
+---
+
+### Validate the output
+
+Validate the generated JSON using the schema.
+
+python3 demo/src/validateJson.py demo/schemas/debrief.schema.json demo/data/outputDebrief.json
+
+Expected result
+
+Validation passed
+
+---
+
+### Score the output
+
+Compare the generated output with the expected reference output.
+
+python3 demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outputDebrief.json
+
+Example output
+
+TP 2  
+FP 1  
+FN 1  
+Precision 0.667  
+Recall 0.667  
+F1 0.667
+
+---
+
+## Why This Approach Exists
+
+AI systems can generate convincing text that is incorrect.
+
+In secure environments such as training simulators, defense systems, and regulated workflows, outputs must be reliable and auditable.
+
+This repository demonstrates a reliability first architecture that controls model outputs using structured constraints.
+
+Key controls include
+
+Template constrained outputs  
+Schema validation gates  
+Traceable source inputs  
+Deterministic evaluation metrics
+
+In this system the AI component becomes one controlled stage inside a reliable pipeline.
+
+---
+
+## Key Design Principles
+
+Template First Outputs  
+AI generation is constrained to predefined structures so outputs remain predictable.
+
+Schema Validation  
+Every output must pass JSON schema validation before it can move forward.
+
+Traceability  
+Every claim in the debrief references the underlying transcript or mission event.
+
+Evaluation Layer  
+Outputs are automatically scored against expected references to detect regressions.
+
+---
+
+## Threat Model
+
+Potential failure modes addressed
+
+Hallucinated claims  
+Unstructured output drift  
+Missing traceability  
+Silent regressions in output quality
+
+Controls implemented
+
+Schema validation  
+Deterministic scoring  
+Explicit source references
+
+Full documentation
+
+docs/ThreatModel.md
+
+---
+
+## Evaluation Plan
+
+Evaluation focuses on reproducibility and regression detection.
+
+Metrics include
+
+Precision  
+Recall  
+F1 score
+
+See
+
+docs/EvaluationPlan.md
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Contact
+
+Patrick Imperato  
+LinkedIn
+
+https://www.linkedin.com/in/patrickimperato/
