@@ -85,8 +85,6 @@ python demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outDebri
 2. Rules checks tied to doctrine constraints
 3. Human approval workflow with audit export
 
-## Contact: https://www.linkedin.com/in/patrickimperato/
-
 ## System Overview
 
 The system demonstrates a reliability first architecture for AI assisted feedback generation.
@@ -113,6 +111,3 @@ Each layer is isolated to prevent hallucinated outputs and to ensure every claim
 
 Clone the repository
 
-
-LinkedIn
-https://www.linkedin.com/in/patrickimperato/
