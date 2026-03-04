@@ -2,11 +2,11 @@ import json
 import sys
 
 def loadJson(path):
-    with open(path, "r", encoding="utf 8") as f:
+   with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 def writeJson(path, obj):
-    with open(path, "w", encoding="utf 8") as f:
+   with open(path, "w", encoding="utf-8") as f:
         json.dump(obj, f, indent=2)
 
 def findSegmentsNearTime(segments, t, windowSec=40):
