@@ -5,11 +5,9 @@ Patrick Imperato
 
 Technical product leader focused on reliable AI systems in secure environments.
 
-LinkedIn  
-https://www.linkedin.com/in/patrickimperato/
+LinkedIn: https://www.linkedin.com/in/patrickimperato/
 
-Original article
-https://www.linkedin.com/pulse/ai-hard-partreliability-patrick-imperato-8idwc/
+Original article: https://www.linkedin.com/pulse/ai-hard-partreliability-patrick-imperato-8idwc/
 
 This repo shows a reliability first approach for AI assisted debriefing in secure simulator environments.
 
