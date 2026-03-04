@@ -1,0 +1,29 @@
+{
+  "missionId": "SIM001",
+  "segments": [
+    {
+      "segmentId": "T1",
+      "timeOffsetSec": 110,
+      "speaker": "student",
+      "text": "I called rejoin left and I think I got stepped on."
+    },
+    {
+      "segmentId": "T2",
+      "timeOffsetSec": 130,
+      "speaker": "instructor",
+      "text": "You did. Two calls overlapped. Use a short pause then transmit."
+    },
+    {
+      "segmentId": "T3",
+      "timeOffsetSec": 550,
+      "speaker": "instructor",
+      "text": "Fuel looks good now. That correction at push got you back on plan."
+    },
+    {
+      "segmentId": "T4",
+      "timeOffsetSec": 910,
+      "speaker": "instructor",
+      "text": "We dipped below the floor briefly. You corrected quickly."
+    }
+  ]
+}

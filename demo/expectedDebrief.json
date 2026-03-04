@@ -1,0 +1,38 @@
+{
+  "missionId": "SIM001",
+  "debrief": {
+    "summary": "Debrief draft based on mission log and transcript only.",
+    "highlights": [
+      {
+        "text": "Fuel management recovered after a correction at push.",
+        "sources": [
+          "E2",
+          "T3"
+        ]
+      }
+    ],
+    "issues": [
+      {
+        "text": "Comm discipline had stepped on calls during rejoin.",
+        "sources": [
+          "E1",
+          "T1",
+          "T2"
+        ]
+      },
+      {
+        "text": "Altitude block had a brief dip below floor, corrected.",
+        "sources": [
+          "E3",
+          "T4"
+        ]
+      }
+    ],
+    "unknowns": [
+      {
+        "text": "No data on other objectives beyond provided inputs.",
+        "sources": []
+      }
+    ]
+  }
+}
