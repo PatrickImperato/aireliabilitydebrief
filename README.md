@@ -1,5 +1,7 @@
 # AI Is Not The Hard Part Reliability Is
 
+A reliability first architecture for AI assisted training debrief generation in secure simulator environments.
+
 Author  
 Patrick Imperato
 
@@ -9,7 +11,7 @@ LinkedIn
 https://www.linkedin.com/in/patrickimperato/
 
 Original article  
-https://www.linkedin.com/pulse/ai-hard-partreliability-patrick-imperato-8idwc/
+[LinkedIn Article](https://www.linkedin.com/pulse/ai-hard-partreliability-patrick-imperato-8idwc/)
 
 ---
 
@@ -21,11 +23,11 @@ The purpose is not to build a large model system. The purpose is to show how AI 
 
 The repository includes
 
-1. Architecture documentation
-2. A working demo pipeline
-3. Schema constrained outputs
-4. Output validation
-5. Evaluation metrics
+1. Architecture documentation  
+2. A working demo pipeline  
+3. Schema constrained outputs  
+4. Output validation  
+5. Evaluation metrics  
 
 Full article text is located in
 
@@ -40,29 +42,24 @@ The system demonstrates a reliability first pipeline for AI assisted debrief gen
 Pipeline flow
 
 Mission Data  
-↓  
-Structured Event Mapping  
-↓  
-Transcript Processing  
-↓  
-Objective Detection  
-↓  
-Constrained Debrief Generation  
-↓  
-Schema Validation  
-↓  
-Evaluation and Scoring
+→ Structured Event Mapping  
+→ Transcript Processing  
+→ Objective Detection  
+→ Constrained Debrief Generation  
+→ Schema Validation  
+→ Evaluation and Scoring  
 
 Each layer isolates model behavior so every output can be traced to its source data.
 
 Architecture description
 
-assets/systemArchitecture.md
+[System Architecture](assets/systemArchitecture.md)
 
 ---
 
 ## Repository Structure
 
+```
 assets/
     systemArchitecture.md
 
@@ -91,9 +88,10 @@ docs/
     References.md
     ThreatModel.md
 
-LICENSE  
-README.md  
+LICENSE
+README.md
 requirements.txt
+```
 
 ---
 
@@ -107,25 +105,33 @@ Download ZIP from the green Code button on GitHub.
 Option 2  
 Clone using git
 
-git clone https://github.com/PatrickImperato/aireliabilitydebrief.git  
+```bash
+git clone https://github.com/PatrickImperato/aireliabilitydebrief.git
 cd aireliabilitydebrief
+```
 
 ---
 
 ### Create a Python environment
 
-python3 -m venv .venv  
+```bash
+python3 -m venv .venv
 source .venv/bin/activate
+```
 
 When activated your terminal should show
 
+```
 (.venv)
+```
 
 ---
 
 ### Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 The demo only requires the jsonschema package.
 
@@ -135,11 +141,15 @@ The demo only requires the jsonschema package.
 
 Run the generator script.
 
+```bash
 python3 demo/src/generateDebrief.py demo/data/sampleMissionLog.json demo/data/sampleTranscript.json demo/data/outputDebrief.json
+```
 
 The generated output file will appear at
 
+```
 demo/data/outputDebrief.json
+```
 
 ---
 
@@ -147,11 +157,15 @@ demo/data/outputDebrief.json
 
 Validate the generated JSON using the schema.
 
+```bash
 python3 demo/src/validateJson.py demo/schemas/debrief.schema.json demo/data/outputDebrief.json
+```
 
 Expected result
 
+```
 Validation passed
+```
 
 ---
 
@@ -159,16 +173,20 @@ Validation passed
 
 Compare the generated output with the expected reference output.
 
+```bash
 python3 demo/src/scoreOutput.py demo/data/expectedDebrief.json demo/data/outputDebrief.json
+```
 
 Example output
 
-TP 2  
-FP 1  
-FN 1  
-Precision 0.667  
-Recall 0.667  
+```
+TP 2
+FP 1
+FN 1
+Precision 0.667
+Recall 0.667
 F1 0.667
+```
 
 ---
 
@@ -185,7 +203,7 @@ Key controls include
 Template constrained outputs  
 Schema validation gates  
 Traceable source inputs  
-Deterministic evaluation metrics
+Deterministic evaluation metrics  
 
 In this system the AI component becomes one controlled stage inside a reliable pipeline.
 
@@ -193,16 +211,20 @@ In this system the AI component becomes one controlled stage inside a reliable p
 
 ## Key Design Principles
 
-Template First Outputs  
+### Template First Outputs
+
 AI generation is constrained to predefined structures so outputs remain predictable.
 
-Schema Validation  
+### Schema Validation
+
 Every output must pass JSON schema validation before it can move forward.
 
-Traceability  
+### Traceability
+
 Every claim in the debrief references the underlying transcript or mission event.
 
-Evaluation Layer  
+### Evaluation Layer
+
 Outputs are automatically scored against expected references to detect regressions.
 
 ---
@@ -214,13 +236,13 @@ Potential failure modes addressed
 Hallucinated claims  
 Unstructured output drift  
 Missing traceability  
-Silent regressions in output quality
+Silent regressions in output quality  
 
 Controls implemented
 
 Schema validation  
 Deterministic scoring  
-Explicit source references
+Explicit source references  
 
 Full documentation
 
@@ -236,7 +258,7 @@ Metrics include
 
 Precision  
 Recall  
-F1 score
+F1 score  
 
 See
 
