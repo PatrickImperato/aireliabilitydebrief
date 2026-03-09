@@ -301,9 +301,10 @@ MIT License
 
 ---
 
-## Contact
+## Connect
 
-Patrick Imperato  
 LinkedIn
-
 https://www.linkedin.com/in/patrickimperato/
+
+GitHub
+https://github.com/PatrickImperato
