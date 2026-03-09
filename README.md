@@ -295,9 +295,19 @@ See
 
 ---
 
-## License
+## Why Reliability Matters
 
-MIT License
+Most AI discussions focus on model capability.  
+Production systems fail for different reasons.
+
+Common failure modes include:
+
+Unstructured outputs that downstream systems cannot consume  
+Silent hallucinations that appear plausible but incorrect  
+Lack of evaluation pipelines  
+No rollback or rollout controls
+
+This architecture focuses on building reliability layers around the model so outputs can be validated, scored, and governed before reaching users.
 
 ---
 
